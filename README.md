@@ -1,5 +1,5 @@
 # power
-
+见文章: https://juejin.im/post/5e670edde51d4527110a9b40
 ## Project setup
 ```
 yarn install
@@ -25,5 +25,3 @@ yarn run test
 yarn run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
