@@ -37,7 +37,7 @@ const actions = {
     getInfo({ commit, state }){
         return new Promise((resolve) => {
             setTimeout(() => {
-                const roles = state.token === 'admin' ? ['admin'] : ['editor']
+                const roles = state.token === 'admin' ? ['admin'] : ['jerry']
                 commit('SET_ROLES',roles)
                 resolve({roles})
             },1000)

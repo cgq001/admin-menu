@@ -56,7 +56,7 @@ export const asyncRoutes = [
         meta: {
           title: "About",
           icon: 'el-icon-edit',
-          roles: ['admin','editor']
+          roles: ['admin','jerry']
         }
       },
       {
@@ -66,7 +66,7 @@ export const asyncRoutes = [
         meta: {
           title: "good",
           icon: 'el-icon-edit',
-          roles: ['admin','editor']
+          roles: ['admin','jerry']
         }
       },
     ]

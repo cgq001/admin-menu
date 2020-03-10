@@ -21,13 +21,13 @@ const permission = {
             const hasPermission = roles.some(role => {
                 return pRoles.includes(role);
             })
-
+            console.log(hasPermission)
             // 如果没有权限则删除当前DOM
             if(!hasPermission){
                 el.parentNode && el.parentNode.removeChild(el);
-            }else{
-                throw new Error(`需要指定按钮要求角色数组,如v-permission="['admin','editor']"`)
             }
+        }else{
+            throw new Error(`需要指定按钮要求角色数组,如v-permission="['admin','editor']"`)
         }
     }
 }
@@ -40,5 +40,6 @@ export default permission;
  * import vPermission from './directive/permission'
  * Vue.directive('permission',vPermission)
  * 
+ * 使用 <button v-permission="['admin']">admin</button>
  * 
  * */ 
