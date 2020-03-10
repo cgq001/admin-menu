@@ -58,7 +58,17 @@ export const asyncRoutes = [
           icon: 'el-icon-edit',
           roles: ['admin','editor']
         }
-      }
+      },
+      {
+        path: 'good',
+        component: () => import('@/views/goods/index.vue'),
+        name: 'good',
+        meta: {
+          title: "good",
+          icon: 'el-icon-edit',
+          roles: ['admin','editor']
+        }
+      },
     ]
   }
 ]

@@ -13,6 +13,9 @@ Vue.use(ElementUI);
 // 全局路由守卫
 import './router/permission'
 
+// 全局注册指令
+import vPermission from './directive/permission'
+Vue.directive('permission',vPermission)
 
 new Vue({
   router,

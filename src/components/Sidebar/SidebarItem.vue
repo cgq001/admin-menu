@@ -1,7 +1,7 @@
 <template>
     <div v-if="!item.hidden" class="menu-wrapper">
-        <!-- 仅有一个可显示的子路由,并且没有孙子路由 -->
-        <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && item.alwaysShow">
+        <!-- 仅有一个可显示的子路由,并且没有孙子路由 && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && item.alwaysShow-->
+        <template v-if="hasOneShowingChild(item.children,item)">
             <router-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">1
                 <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown' : isNest }">
                    
@@ -67,6 +67,7 @@ export default {
                     return true
                 }
             })
+           
             // 当只有一个子路由,子路由默认展示
             if(showingChildren.length === 1){
                 return true
@@ -76,7 +77,7 @@ export default {
                 this.onlyOneChild = {...parent, path: '', noShowingChildren: true }
                 return true
             }
-            console.log( this.onlyOneChild)
+             console.log(this.onlyOneChild)
             return false
         },
         resolvePath(routePath){
