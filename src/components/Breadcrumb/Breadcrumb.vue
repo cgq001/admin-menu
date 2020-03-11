@@ -1,4 +1,5 @@
 <template>
+<!-- 面包屑 -->
     <el-breadcrumb class="app-breadcrumb" separator="/">
         <transition-group name="breadcrumb">
             <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
@@ -43,7 +44,7 @@ export default {
 
             // 根匹配只要不是home,就作为home下一级
             if(!this.isHome(first)){
-                matched = [{path: '/', refirect: '/home', meta: { title: '首页' }}].concat(matched)
+                matched = [{ refirect: '/home', meta: { title: '首页' }}].concat(matched)
             }
 
             // 处理完指定到levelList
@@ -74,3 +75,22 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.breadcrumb-enter-active,
+.breadcrumb-leave-active{
+    transform: all .5s;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active{
+    opacity: 0;
+    transform: translateX(20px);
+}
+.breadcrumb-move{
+    transition: all 0.5s;
+}
+.breadcrumb-leave-active{
+    position: absolute;;
+}
+</style>
