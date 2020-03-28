@@ -24,7 +24,7 @@ export const constRouter = [
       },
       children: [
           {
-              path: 'home',
+              path: '',
               component: () => {
                   import('@/views/Home.vue')
               },

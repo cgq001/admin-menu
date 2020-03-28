@@ -1,4 +1,4 @@
-// 路由的全局首位
+// 路由的全局守卫
 
 // 权限控制逻辑
 import router from './index'

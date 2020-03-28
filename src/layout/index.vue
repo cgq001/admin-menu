@@ -1,12 +1,16 @@
 <template>
     <div class="app-wrapper">
-        <sidebar class="sidebar-container">
-       
-        </sidebar>
-        <!-- 内容区域 -->
-        <div class="main-container">
-            <router-view />
-        </div>
+        <el-container class="app-box">
+            <el-aside width="220px" class="main-aside">
+                    <sidebar class="sidebar-container"></sidebar>
+            </el-aside>
+            <el-container class="main">
+                <el-header class="heads">Header</el-header>
+                <el-main class="main-container">
+                    <router-view />
+                </el-main>
+            </el-container>
+        </el-container>
     </div>
 </template>
 
@@ -18,3 +22,36 @@ export default {
     }
 }
 </script>
+
+<style>
+.app-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.app-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.heads{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+    height: 100%;
+}
+.main-aside{
+    height: 100%;
+    background: #001529;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.el-menu{
+    border: none !important;
+}
+</style>

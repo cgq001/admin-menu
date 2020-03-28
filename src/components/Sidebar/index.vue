@@ -1,6 +1,5 @@
 <template>
     <div>
-  
             <el-menu
                 :default-active="activeMenu"
                 :background-color="variables.menuBg"
@@ -26,7 +25,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import SidebarItem from './SidebarItem'
-console.log('一层')
+
 export default {
 
     components:{ SidebarItem },
@@ -44,8 +43,8 @@ export default {
         variables(){
             return {
                 menuText: "#bfcbd9",
-                menuActiveText: "#409EFF",
-                menuBg: "#304156"
+                menuActiveText: "#ffffff",
+                menuBg: "#001529"
             }
         }
     },
