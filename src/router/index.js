@@ -17,23 +17,28 @@ export const constRouter = [
   {
       path: '/',
       component: Layout, //应用布局页
-      redirect: '/home',
+      redirect: '/index',
+      hidden: true,
+  },
+  {
+      path: '/index',
+      component: Layout, //应用布局页
+      name: 'index',
       meta:{
-        title: '布局',
-        icon: 'el-icon-share'
+          title: "首页", //导航菜单项标题
+          icon: 'el-icon-edit' //导航菜单图标
       },
       children: [
-          {
-              path: '',
-              component: () => {
-                  import('@/views/Home.vue')
-              },
-              name: "Home",
-              meta:{
-                  title: "Home", //导航菜单项标题
-                  icon: 'el-icon-edit' //导航菜单图标
-              }
+        {
+          path: '',
+          component: () => import('@/views/index/index.vue'),
+          name: 'indexs',
+          meta: {
+            title: "首页",
+            icon: 'el-icon-edit',
+            roles: ['admin','jerry']
           }
+        }
       ]
   }
 ]
@@ -59,6 +64,26 @@ export const asyncRoutes = [
           roles: ['admin','jerry']
         }
       },
+      {
+        path: 'good',
+        component: () => import('@/views/goods/index.vue'),
+        name: 'good',
+        meta: {
+          title: "good",
+          icon: 'el-icon-edit',
+          roles: ['admin','jerry']
+        }
+      },
+    ]
+  },
+  {
+    path: '/good',
+    component: Layout,
+    meta:{
+      title: "商品管理",
+      icon: 'el-icon-edit'
+    },
+    children: [
       {
         path: 'good',
         component: () => import('@/views/goods/index.vue'),

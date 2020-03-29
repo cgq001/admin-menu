@@ -10,14 +10,14 @@ import { asyncRoutes, constRouter } from '@/router'
  * 
 */
 function hasPermission (roles,route){
-    console.log(roles,route)
+   
     // 如果当前路由有roles 字段则需要判断用户访问权限
     if(route.meta && route.meta.roles){
         // 若用户拥有的角色中有被包含在待定路由角色表中的则拥有访问权限
         return roles.some(role => route.meta.roles.includes(role))
     } else{
         // 没有设置roles 则无需判定即可访问
-        return true
+        return true;
     }
 }
 
@@ -33,7 +33,7 @@ export function filterAsyncRoutes(routes,roles){
     routes.forEach(route => {
         // 复制一份
         const tmp = { ...route}
-     
+       
         // 如果用户有访问权限则加入结果路由表
         if(hasPermission(roles,tmp)){
             // 如果存在子路由则递归过滤之
@@ -72,11 +72,11 @@ const actions = {
             if(roles.includes('admin')){
                 accessedRoutes = asyncRoutes || []
             }else{
-                console.log(roles)
+                // console.log(roles)
                 //  否则需要根据用户角色做过滤处理 jerry
                 accessedRoutes = filterAsyncRoutes(asyncRoutes,roles)
             }
-         
+          
             commit('SET_ROUTES',accessedRoutes)
        
             resolve(accessedRoutes)

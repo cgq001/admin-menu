@@ -5,7 +5,9 @@
                     <sidebar class="sidebar-container"></sidebar>
             </el-aside>
             <el-container class="main">
-                <el-header class="heads">Header</el-header>
+                <el-header class="heads" height='50px'>
+                    <Headers></Headers>
+                </el-header>
                 <el-main class="main-container">
                     <router-view />
                 </el-main>
@@ -16,9 +18,11 @@
 
 <script>
 import Sidebar from '../components/Sidebar/index.vue'
+import Headers from '../components/Headers/Headers.vue'
 export default {
     components: {
-        Sidebar
+        Sidebar,
+        Headers
     }
 }
 </script>
@@ -37,6 +41,7 @@ export default {
 .heads{
     margin: 0;
     padding: 0;
+    border-bottom: 1px solid #dcdfe6;
 }
 .main{
     width: 100%;

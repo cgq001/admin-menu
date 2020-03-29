@@ -21,7 +21,7 @@ const permission = {
             const hasPermission = roles.some(role => {
                 return pRoles.includes(role);
             })
-            console.log(hasPermission)
+            // console.log(hasPermission)
             // 如果没有权限则删除当前DOM
             if(!hasPermission){
                 el.parentNode && el.parentNode.removeChild(el);

@@ -53,7 +53,7 @@ export default {
         }
     },
     mounted(){
-        console.log(this.item)
+        // console.log(this.item)
     },
     methods:{
         hasOneShowingChild(children = [],parent){
@@ -77,7 +77,7 @@ export default {
                 this.onlyOneChild = {...parent, path: '', noShowingChildren: true }
                 return true
             }
-             console.log(this.onlyOneChild)
+            //  console.log(this.onlyOneChild)
             return false
         },
         resolvePath(routePath){
@@ -90,10 +90,8 @@ export default {
 <style>
 .el-menu-item.is-active {
     background: #1A86EE !important;
-    /* height: 40px !important;
-    line-height: 40px !important; */
 }
-.el-submenu .el-menu-item{
+/* .el-submenu .el-menu-item{
     height: 40px !important;
     line-height: 40px !important;
     margin: 2px 0 3px !important;
@@ -112,5 +110,5 @@ export default {
     height: 40px !important;
     line-height: 40px !important;
     margin: 2px 0 3px !important;
-}
+} */
 </style>

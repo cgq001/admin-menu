@@ -50,7 +50,7 @@ export default {
     },
     mounted(){
  
-        console.log(this.permission_routes,12)
+        // console.log(this.permission_routes,12)
     }
 }
 </script>

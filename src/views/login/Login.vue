@@ -18,13 +18,15 @@ export default {
             this.$store
                 .dispatch('user/login',{username: this.username})
                 .then(()=>{
+                  
                     // 登陆成功后重定向
                     this.$router.push({
-                        path: this.$route.query.redirect || '/'
+                        path: this.$route.query.redirect || '/index'
                     })
+                     
                 })
                 .catch(err=>{
-                    console.log(err)
+                    // console.log(err)
                 })
         }
     }
