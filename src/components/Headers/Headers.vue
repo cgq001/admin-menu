@@ -102,6 +102,7 @@ export default {
             switch(command){
                 case 'github':
                     console.log('前往github')
+                    window.open('https://github.com/cgq001/admin-menu')
                 break;
                 case 'quit':
                     let src = this.$store.dispatch('user/resetToken')
