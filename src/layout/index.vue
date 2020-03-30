@@ -9,6 +9,7 @@
                     <Headers></Headers>
                 </el-header>
                 <el-main class="main-container">
+                    <TagsViews />
                     <router-view />
                 </el-main>
             </el-container>
@@ -19,10 +20,12 @@
 <script>
 import Sidebar from '../components/Sidebar/index.vue'
 import Headers from '../components/Headers/Headers.vue'
+import TagsViews from '../components/TageView/TagsView.vue'
 export default {
     components: {
         Sidebar,
-        Headers
+        Headers,
+        TagsViews
     }
 }
 </script>
@@ -54,7 +57,7 @@ export default {
 .main-container{
     width: 100%;
     height: 100%;
-    padding: 0;
+    padding: 0 !important;
 }
 .el-menu{
     border: none !important;

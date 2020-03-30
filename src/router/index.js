@@ -15,7 +15,7 @@ export const constRouter = [
       hidden: true //导航菜单忽略选项
   },
   {
-      path: '/',
+      path: '',
       component: Layout, //应用布局页
       redirect: '/index',
       hidden: true,
