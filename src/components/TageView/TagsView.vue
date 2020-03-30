@@ -122,8 +122,8 @@ export default {
     .tags-view-item {
       display: inline-block;
       position: relative;
-      height: 22px;
-      line-height: 22px;
+      height: 26px;
+      line-height: 26px;
       border: 1px solid #d8dce5;
       color: #495060;
       background: #fff;
@@ -188,6 +188,7 @@ export default {
       text-align: center;
       transition: all .3s cubic-bezier(.645, .045, .355, 1);
       transform-origin: 100% 50%;
+      margin-left: 3px;
       &:before {
         transform: scale(.6);
         display: inline-block;
