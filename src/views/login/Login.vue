@@ -9,7 +9,6 @@
                  <input type="text" v-model="username" />
                 <div @click="login">登陆</div>
             </div>
-           
         </div>
        
     </div>
@@ -60,6 +59,7 @@ export default {
     background: hsla(0,0%,100%,.3);
     border-radius: 5px;
     box-shadow: 0 0 2px #f7f7f7;
+    border: 1px solid #f7f7f7;
 }
 .login-box-title{
     line-height: 50px;
