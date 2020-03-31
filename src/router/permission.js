@@ -4,13 +4,21 @@
 import router from './index'
 import store from '../store/index'
 
+//引入nprogress 进度条插件
+import NProgress from 'nprogress'
+
 import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth' // 从cookie获取令牌
+
+// 简单配置  进度条
+NProgress.inc(0.2)
+NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
+
 
 const whiteList = ['/login'] //排除的路径
 
 router.beforeEach(async (to,from,next) => {
-
+    NProgress.start()
     // 获取令牌判断用户是否登陆
     const hasToken = getToken()
     // 有令牌 表示已经登陆
@@ -61,3 +69,7 @@ router.beforeEach(async (to,from,next) => {
         }
     }
 })
+
+router.afterEach(() => {
+    NProgress.done()
+  })

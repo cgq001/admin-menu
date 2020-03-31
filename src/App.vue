@@ -21,5 +21,8 @@ export default {
   width: 100%;
   height: 100%;
 }
-
+// 自定义进度条颜色
+ #nprogress .bar {
+      background: #F811B2 !important; //自定义颜色
+  }
 </style>
