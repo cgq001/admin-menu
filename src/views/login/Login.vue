@@ -6,8 +6,21 @@
                 后台管理系统
             </div>
             <div class="login-box-from">
-                 <input type="text" v-model="username" />
-                <div @click="login">登陆</div>
+                <el-form :model="loginForm" :rules="rules" ref="loginForm"  class="demo-ruleForm">
+                    <el-form-item prop="username">
+                        <el-input v-model="loginForm.username" placeholder="请输入用户名" size="medium">
+                            <el-button slot="prepend" icon="el-icon-user"></el-button>
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item prop="password">
+                        <el-input v-model="loginForm.password"  placeholder="请输入密码" size="medium">
+                            <el-button slot="prepend" icon="el-icon-key"></el-button>
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button type="primary" size="medium" :loading="loading" style="width:100%" @click="submitForm('loginForm')">立即登陆</el-button>
+                    </el-form-item>
+                </el-form>
             </div>
         </div>
        
@@ -18,16 +31,53 @@
 <script>
 export default {
     data(){
+        let letterRule = (rule, value, callback) => {
+            let reg = /^[a-zA-Z0-9_-]{4,18}$/
+            if (value === '') {
+                callback(new Error('输入内容不能为空'));
+            }else if(!reg.test(value)) {
+                callback(new Error('请输入字母、数字、下划线'));
+            }else{
+                callback();
+            }
+        };
         return {
-            username:undefined
+            loading: false, //登陆状态
+            loginForm:{  // 登陆表单
+                username: 'admin',
+                password: '123456'
+            },
+            rules:{  //登陆验证规则
+                username:[
+                    { required: true, message: '请输入用户名', trigger: 'blur' },
+                    { min: 2, max: 18, message: '长度在 2 到 18 个字符', trigger: 'blur' },
+                    { validator: letterRule, trigger: 'blur' }
+                ],
+                password: [
+                    { required: true, message: '请输入密码', trigger: 'blur' },
+                    { min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur' },
+                    { validator: letterRule, trigger: 'blur' }
+                ]
+            }
         }
     },
     methods:{
+        submitForm(formName){
+            this.$refs[formName].validate((valid) => {
+                if (valid) {
+                    this.loading = true
+                    this.login()
+                } else {
+                    console.log('error submit!!');
+                    return false;
+                }
+            });
+        },
         login(){
             this.$store
-                .dispatch('user/login',{username: this.username})
+                .dispatch('user/login',{username: this.loginForm.username})
                 .then(()=>{
-                  
+                    this.loading = true
                     // 登陆成功后重定向
                     this.$router.push({
                         path: this.$route.query.redirect || '/index'
@@ -35,6 +85,7 @@ export default {
                      
                 })
                 .catch(err=>{
+                    this.loading = true
                     // console.log(err)
                 })
         }
@@ -55,7 +106,7 @@ export default {
 }
 .login-box{
     width: 350px;
-    height: 287px;
+    /* height: 287px; */
     background: hsla(0,0%,100%,.3);
     border-radius: 5px;
     box-shadow: 0 0 2px #f7f7f7;
