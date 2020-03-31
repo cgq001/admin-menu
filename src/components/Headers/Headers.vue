@@ -91,12 +91,13 @@ export default {
                         type: 'warning'
                     })
             }
-
+            console.log(isFull)
             if (isFull === undefined) {
                 isFull = false;
             }
             return isFull;
         },
+        // 用户名 下拉菜单
         handleCommand(command){
           
             switch(command){
@@ -119,13 +120,7 @@ export default {
     },
     mounted() {
         // 浏览器窗口改变事件
-    //   window.onresize = () => {
-    //         // 全屏下监控是否按键了ESC
-    //         if (!this.checkFull()) {
-    //           // 全屏下按键esc后要执行的动作
-    //         //   this.isFullscreen = false;
-    //         }
-    //     }
+        this.isFullscreen = document.body.scrollHeight === window.screen.height
     }
 }
 </script>
