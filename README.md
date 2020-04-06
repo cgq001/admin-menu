@@ -15,15 +15,22 @@ yarn run serve
 ```
 yarn run build
 ```
+## 后台管理通用框架
+### 1.登陆
+![](https://user-gold-cdn.xitu.io/2020/4/6/1714fb94c77fcd36?w=1914&h=937&f=png&s=374345)
+### 2.工作台
+![](https://user-gold-cdn.xitu.io/2020/4/6/1714fb9c7aefbff8?w=1920&h=938&f=png&s=307232)
+### 3.通知
+![](https://user-gold-cdn.xitu.io/2020/4/6/1714fb99cbe57cfe?w=468&h=622&f=png&s=46176)
+### 4.主题
+![](https://user-gold-cdn.xitu.io/2020/4/6/1714fb98c7ef9124?w=550&h=940&f=png&s=165347)
+### 5.发邮件
+![](https://user-gold-cdn.xitu.io/2020/4/6/1714fb977801d049?w=1920&h=943&f=png&s=125289)
+### 6.通知详情
+![](https://user-gold-cdn.xitu.io/2020/4/6/1714fb95eb472f83?w=1915&h=937&f=png&s=252470)
+目前可实现Excel表格下载,请见MarkDown文档,下一步规划图标功能
 
-### Run your tests
-```
-yarn run test
-```
 
-### Lints and fixes files
-```
-yarn run lint
 ```
 ## Excel 导出
 ```javascript
