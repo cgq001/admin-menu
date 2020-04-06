@@ -6,7 +6,7 @@
         class="el-menu-vertical-demo"
         :collapse="false"
         :default-active="activeMenu"
-        :background-color="variables.menuBg"
+        background-color="transparent"
         :text-color="variables.menuText"
         :unique-opened="false"
         :active-text-color="variables.menuActiveText"
@@ -43,9 +43,10 @@ export default {
     },
     variables() {
       return {
-        menuText: "#bfcbd9",
+        menuText: "#ffffff",  // "#bfcbd9"
         menuActiveText: "#ffffff",
-        menuBg: "#001529"
+        menuBg:  "#001529"
+       
       };
     }
   },

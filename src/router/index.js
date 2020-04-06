@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Layout from '@/layout' //布局页
 
-import Home from '../views/Home.vue'
+
 
 Vue.use(VueRouter)
 
@@ -26,7 +26,7 @@ export const constRouter = [
       name: 'index',
       meta:{
           title: "首页", //导航菜单项标题
-          icon: 'el-icon-edit' //导航菜单图标
+          icon: 'el-icon-s-home' //导航菜单图标
       },
       children: [
         {
@@ -34,8 +34,8 @@ export const constRouter = [
           component: () => import('@/views/index/index.vue'),
           name: 'indexs',
           meta: {
-            title: "首页",
-            icon: 'el-icon-edit',
+            title: "工作台",
+            icon: 'el-icon-s-home',
             roles: ['admin','jerry']
           }
         }
@@ -43,54 +43,65 @@ export const constRouter = [
   }
 ]
 
-// 动态路由
+// 动态路由 communication
 export const asyncRoutes = [
   {
-    path: '/about',
+    path: '/communication',
     component: Layout,
-    redirect: '/about/index',
+    redirect: '/communication/index',
     meta:{
-      title: "关于",
-      icon: 'el-icon-edit'
+      title: "通讯",
+      icon: 'el-icon-s-help'
     },
     children: [
       {
         path: 'index',
-        component: () => import('@/views/about/About.vue'),
-        name: 'about',
+        component: () => import('@/views/communication/Index.vue'),
+        name: 'communicationindex',
         meta: {
-          title: "About",
-          icon: 'el-icon-edit',
+          title: "邮件",
+          icon: 'el-icon-message',
           roles: ['admin','jerry']
         }
       },
       {
-        path: 'good',
-        component: () => import('@/views/goods/index.vue'),
-        name: 'good',
+        path: 'wechat',
+        component: () => import('@/views/communication/WeChat.vue'),
+        name: 'communicationwechat',
         meta: {
-          title: "good",
-          icon: 'el-icon-edit',
+          title: "客服",
+          icon: 'el-icon-service',
           roles: ['admin','jerry']
         }
       },
     ]
   },
   {
-    path: '/good',
+    path: '/home',
     component: Layout,
+    redirect: '/home/index',
     meta:{
-      title: "商品管理",
-      icon: 'el-icon-edit'
+      title: "个人中心",
+      icon: 'el-icon-user-solid'
     },
     children: [
       {
-        path: 'good',
-        component: () => import('@/views/goods/index.vue'),
-        name: 'good',
+        path: 'index',
+        component: () => import('@/views/home/Index.vue'),
+        name: 'homeindex',
         meta: {
-          title: "good",
-          icon: 'el-icon-edit',
+          title: "个人设置",
+          icon: 'el-icon-user-solid',
+          roles: ['admin','jerry']
+        }
+      },
+      {
+        path: 'Informationall',
+        component: () => import('@/views/home/Informationall.vue'),
+        name: 'homeinformationall',
+        meta: {
+          title: "个人消息",
+          icon: 'el-icon-message-solid',
           roles: ['admin','jerry']
         }
       },
