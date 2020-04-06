@@ -17,17 +17,17 @@ yarn run build
 ```
 ## 后台管理通用框架
 ### 1.登陆
-![](https://github.com/cgq001/admin-menu/tree/2.0/image/login.png)
+![Image](https://github.com/cgq001/admin-menu/blob/2.0/image/login.png)
 ### 2.工作台
-![](https://github.com/cgq001/admin-menu/tree/2.0/image/1.png)
+![Image](https://github.com/cgq001/admin-menu/blob/2.0/image/1.png)
 ### 3.通知
-![](https://github.com/cgq001/admin-menu/tree/2.0/image/2.png)
+![Image](https://github.com/cgq001/admin-menu/blob/2.0/image/2.png)
 ### 4.主题
-![](https://github.com/cgq001/admin-menu/tree/2.0/image/3.png)
+![Image](https://github.com/cgq001/admin-menu/blob/2.0/image/3.png)
 ### 5.发邮件
-![](https://github.com/cgq001/admin-menu/tree/2.0/image/4.png)
+![Image](https://github.com/cgq001/admin-menu/blob/2.0/image/4.png)
 ### 6.通知详情
-![](https://github.com/cgq001/admin-menu/tree/2.0/image/5.png)
+![Image](https://github.com/cgq001/admin-menu/blob/2.0/image/5.png)
 目前可实现Excel表格下载,请见MarkDown文档,下一步规划图标功能
 
 
