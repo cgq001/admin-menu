@@ -11,7 +11,10 @@
                 <el-main class="main-container">
                     <TagsViews />
                     <div class="main-container-views" :style="themeColor[themeIndex].container">
-                        <router-view />
+                        <transition name="nodebook" mode="out-in">
+                            <router-view />
+                        </transition>
+                        
                     </div>
                 </el-main>
             </el-container>
@@ -35,6 +38,11 @@ import { getTheme, setTheme } from '@/utils/theme'
 let Theme = parseInt(getTheme()) || 0
 
 let themeColor =[
+    {
+        aside: 'background-image: linear-gradient(#001529, #001529);',
+        header: 'background-image: linear-gradient(to right,#ffffff, #ffffff);',
+        container: 'background-image: linear-gradient(to bottom right,#ffffff,#ffffff);'
+    },
     {
         aside: 'background-image: linear-gradient(#00BCFF, #00BCFF);',
         header: 'background-image: linear-gradient(to right,#D2F2F1, #D2F2F1);',
@@ -199,5 +207,18 @@ export default {
     color: #1989fa;
     font-size: 30px;
     font-weight: bolder;
+}
+
+.nodebook-enter, .nodebook-leave-to{
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.nodebook-enter-to, .nodebook-leave{
+    transform: scale(1);
+    opacity: 1;
+}
+.nodebook-enter-active, .nodebook-leave-active {
+    transition: all 0.3s;
 }
 </style>

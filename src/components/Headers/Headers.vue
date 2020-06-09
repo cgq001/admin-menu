@@ -8,9 +8,13 @@
         </div>
         <div class="headers-right">
             <div class="headers-right-left">
-                 
+                <el-tooltip class="item" effect="dark" content="源码" placement="bottom">
+                    <github2 class="headers-right-left-githubIcon" @click="goGithub" />
+                </el-tooltip>
                 <el-tooltip class="item" effect="dark" :content="isFullscreen ? '取消全屏' : '全屏'" placement="bottom">
-                    <i :class="isFullscreen ? 'el-icon-full-screen head-screen-news' : 'el-icon-rank head-screen'" @click="buttoncli"></i>
+                    <!-- <i :class="isFullscreen ? 'el-icon-full-screen head-screen-news' : 'el-icon-rank head-screen'" @click="buttoncli"></i> -->
+                    <reduction v-if="isFullscreen" class="headers-right-left-screenIcon" @click="buttoncli" />
+                    <screen v-else class="headers-right-left-screenIcon" @click="buttoncli" />
                 </el-tooltip>
                 <el-tooltip class="item" style="margin: 0 20px 0 10px; color: #171700" effect="dark" content="主题" placement="bottom">
                     <i class="el-icon-picture-outline-round" @click="theme = true"></i>
@@ -71,6 +75,11 @@ import Breadcrumb from '../Breadcrumb/Breadcrumb2'
 
 // 通知栏组件
 import Dropdowns from '../Dropdown/index'
+
+import github2 from '../../assets/icon/github2.svg' //github
+import screen from '../../assets/icon/screen.svg'  //全屏
+import reduction from '../../assets/icon/reduction.svg' //还原
+
 export default {
     props:{
         asideShow: {
@@ -97,7 +106,10 @@ export default {
     },
     components:{
         Breadcrumb,
-        Dropdowns
+        Dropdowns,
+        github2,
+        screen,
+        reduction
     },
     methods:{
         // 自定义 切换 侧边栏 事件
@@ -145,7 +157,7 @@ export default {
             switch(command){
                 case 'github':
                    
-                    window.open('https://github.com/cgq001/admin-menu')
+                    window.open('https://github.com/cgq001/admin-menu/tree/2.0')
                 break;
                 case 'quit':
                     let src = this.$store.dispatch('user/resetToken')
@@ -180,6 +192,10 @@ export default {
         // 选取配色方案
         targetThemeIndex(index){
             this.$emit('targetThemeIndex',index)
+        },
+        // 去github
+        goGithub(){
+            window.open('https://github.com/cgq001/admin-menu/tree/2.0')
         }
     },
     mounted() {
@@ -236,6 +252,20 @@ export default {
     font-size: 22px;
     cursor: pointer;
     position: relative;
+}
+.headers-right-left-screenIcon{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    fill: currentColor; 
+    color: #413A3F;
+}
+.headers-right-left-githubIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    fill: currentColor; 
+    color: #413A3F;
 }
 .header-right-dropdown{
     width: 300px;
