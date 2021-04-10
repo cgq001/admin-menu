@@ -1,5 +1,24 @@
 <template>
     <div class="login">
+    <vue-particles 
+        class="login-bg"
+        color='#39AFFD'
+         :particleOpacity="0.7"
+        :particlesNumber="100"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#8DD1FE"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+        >
+        </vue-particles>
         <!-- 登录面板 -->
         <div class="login-box">
             <div class="login-box-title">
@@ -23,7 +42,7 @@
                 </el-form>
             </div>
         </div>
-       
+    
     </div>
    
 </template>
@@ -68,7 +87,7 @@ export default {
                     this.loading = true
                     this.login()
                 } else {
-                    console.log('error submit!!');
+                    // console.log('error submit!!');
                     return false;
                 }
             });
@@ -97,12 +116,19 @@ export default {
 .login{
     width: 100%;
     height: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('../../assets/image/login.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    color: #cccccc; */
+    position: relative;
+}
+.login-bg{
+    width: 100%;
+    height: 100%;
+    background: #3E3E3E;
 }
 .login-box{
     width: 350px;
@@ -111,6 +137,12 @@ export default {
     border-radius: 5px;
     box-shadow: 0 0 2px #f7f7f7;
     border: 1px solid #f7f7f7;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -150px;
+   
 }
 .login-box-title{
     line-height: 50px;

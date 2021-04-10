@@ -38,7 +38,7 @@ export default {
             let metched = this.$route.matched.filter(
                 item => item.meta && item.meta.title && item.meta.breadcrumb !== false
             )
-           console.log(metched)
+
             // 跟路由
             const first = metched[0];
             

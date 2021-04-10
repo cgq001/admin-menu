@@ -7,22 +7,33 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@jiaminghi/data-view": "^2.10.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "echarts": "^4.8.0",
     "element-ui": "^2.13.0",
     "js-cookie": "^2.2.1",
     "nprogress": "^0.2.0",
     "screenfull": "^5.0.2",
+    "v-charts": "^1.19.0",
     "vue": "^2.6.11",
+    "vue-count-to": "^1.0.13",
+    "vue-grid-layout": "^2.3.7",
+    "vue-particles": "^1.0.9",
     "vue-router": "^3.1.5",
-    "vuex": "^3.1.2"
+    "vue-seamless-scroll": "^1.1.17",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.11",
+    "vuex": "^3.1.2",
+    "wangeditor": "^3.1.1",
+    "xlsx": "^0.15.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-happy-scroll": "^2.1.1"
   },
   "browserslist": [
     "> 1%",
