@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@jiaminghi/data-view": "^2.10.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "echarts": "^4.8.0",
